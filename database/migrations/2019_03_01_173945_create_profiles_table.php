@@ -14,9 +14,9 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('avatar')->nullable();
-            $table->integer('user_id');
+            $table->increments('id', 100);
+            $table->string('avatar')->default('uploads/avatars/img_avatar.png');
+            $table->integer('user_id', 100);
             $table->text('about')->nullable();
             $table->timestamps();
         });
